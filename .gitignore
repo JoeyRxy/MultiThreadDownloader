@@ -1,0 +1,6 @@
+target/
+*.jar
+tmp/
+src/site
+src/test
+properties.json

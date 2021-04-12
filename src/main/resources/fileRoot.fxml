@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mine.learn.mtdl.gui.FileRootController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="300.0" prefWidth="300.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.5" minWidth="10.0" prefWidth="94.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.5" minWidth="10.0" prefWidth="66.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <AnchorPane>
+         <children>
+            <BorderPane layoutX="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <TextField fx:id="fileRoot" />
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+      <BorderPane prefWidth="94.0" GridPane.columnIndex="2">
+         <center>
+            <Button mnemonicParsing="false" onAction="#confirm" text="确认" />
+         </center>
+      </BorderPane>
+      <Button mnemonicParsing="false" onAction="#chooseFolder" text="选择文件夹" GridPane.columnIndex="1" />
+   </children>
+</GridPane>

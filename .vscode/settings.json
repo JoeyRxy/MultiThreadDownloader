@@ -1,0 +1,14 @@
+{
+    "cSpell.words": [
+        "activethreads",
+        "alreadyfx",
+        "contentlengthfx",
+        "proxyonoff",
+        "proxysetting",
+        "totalthreads"
+    ],
+    "java.completion.filteredTypes": [
+        "com.sun.*"
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
+}

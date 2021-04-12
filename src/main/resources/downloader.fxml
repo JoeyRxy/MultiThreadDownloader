@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="parentnode" prefHeight="215.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mine.learn.mtdl.gui.Controller">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="设置">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showProxySetting" text="代理" />
+                        <MenuItem mnemonicParsing="false" onAction="#setDefaultRoot" text="默认下载位置" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="帮助">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showAbout" text="关于" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane>
+            <children>
+                <GridPane AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="79.0" minWidth="79.0" prefWidth="79.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="11.0" minWidth="11.0" prefWidth="11.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="10000.0" minWidth="10.0" prefWidth="601.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.5" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="29.5" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <BorderPane>
+                            <right>
+                                <Label text="URL" BorderPane.alignment="CENTER" />
+                            </right>
+                        </BorderPane>
+                        <BorderPane GridPane.rowIndex="1">
+                            <right>
+                                <Label text="保存为" BorderPane.alignment="CENTER" />
+                            </right>
+                        </BorderPane>
+                        <BorderPane GridPane.rowIndex="2">
+                            <center>
+                                <Label />
+                            </center>
+                        </BorderPane>
+                        <BorderPane GridPane.rowIndex="5">
+                            <right>
+                                <Label text="Cookie" BorderPane.alignment="CENTER" />
+                            </right>
+                        </BorderPane>
+                        <BorderPane GridPane.rowIndex="4">
+                            <right>
+                                <Label text="Referer" BorderPane.alignment="CENTER" />
+                            </right>
+                        </BorderPane>
+                        <BorderPane GridPane.rowIndex="2">
+                            <right>
+                                <Label text="线程数" BorderPane.alignment="CENTER" />
+                            </right>
+                        </BorderPane>
+                        <TextField fx:id="url" GridPane.columnIndex="2" />
+                        <TextField fx:id="referer" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <TextArea fx:id="cookie" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <ComboBox fx:id="threadNum" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <BorderPane GridPane.rowIndex="3">
+                            <right>
+                                <Label text="代理" BorderPane.alignment="CENTER" />
+                            </right>
+                        </BorderPane>
+                        <GridPane GridPane.columnIndex="2" GridPane.rowIndex="3">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="512.5" minWidth="10.0" prefWidth="504.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.5" minWidth="10.0" prefWidth="97.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <TextField fx:id="proxy" />
+                                <BorderPane GridPane.columnIndex="1">
+                                    <right>
+                                        <Button fx:id="proxyonoff" mnemonicParsing="false" onAction="#disableProxy" prefHeight="23.0" prefWidth="76.0" text="不使用" BorderPane.alignment="CENTER" />
+                                    </right>
+                                </BorderPane>
+                            </children>
+                        </GridPane>
+                        <TextField fx:id="fileName" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <BorderPane GridPane.rowIndex="6">
+                     <right>
+                        <Label text="SHA-256" BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
+                  <TextField fx:id="checksum" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+        <Separator minHeight="20.0" prefWidth="200.0" />
+        <GridPane prefWidth="711.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.5" minWidth="10.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.5" minWidth="10.0" prefWidth="156.5" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="680.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647">
+                    <children>
+                        <ProgressBar fx:id="progress" prefHeight="18.0" prefWidth="566.0" progress="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                    </children>
+                </AnchorPane>
+                <BorderPane>
+                    <right>
+                        <Label text="进度" BorderPane.alignment="CENTER" />
+                    </right>
+                </BorderPane>
+                <BorderPane GridPane.rowIndex="2">
+                    <right>
+                        <Label text="速度" BorderPane.alignment="CENTER" />
+                    </right>
+                </BorderPane>
+                <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <Label fx:id="speed" text="0 KB/s" AnchorPane.leftAnchor="10.0" />
+                    </children>
+                </AnchorPane>
+                <Label fx:id="activethreads" text="0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Label text="活跃线程数" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label text="总线程数" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <Label fx:id="totalthreads" text="0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                <AnchorPane GridPane.columnSpan="6" GridPane.rowIndex="1">
+                    <children>
+                        <GridPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1000.0" minWidth="10.0" prefWidth="1000.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="16.0" minWidth="16.0" prefWidth="16.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1000.0" minWidth="10.0" prefWidth="1000.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1000.0" minWidth="10.0" prefWidth="1000.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <BorderPane GridPane.columnIndex="1">
+                                    <center>
+                                        <Label ellipsisString="/" text="/" />
+                                    </center>
+                                </BorderPane>
+                                <BorderPane>
+                                    <right>
+                                        <Label fx:id="alreadyfx" text="KB" BorderPane.alignment="CENTER" />
+                                    </right>
+                                </BorderPane>
+                                <Label fx:id="contentlengthfx" text="       KB" GridPane.columnIndex="2" />
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                           <left>
+                              <Label text="剩余时间：" BorderPane.alignment="CENTER" />
+                           </left>
+                           <center>
+                              <BorderPane BorderPane.alignment="CENTER">
+                                 <left>
+                                    <Label fx:id="remainTime" BorderPane.alignment="CENTER" />
+                                 </left>
+                              </BorderPane>
+                           </center>
+                        </BorderPane>
+                            </children>
+                        </GridPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </GridPane>
+        <AnchorPane>
+            <children>
+                <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                    <buttons>
+                        <Button fx:id="start" mnemonicParsing="false" onAction="#startAndPause" text="开始" />
+                        <Button mnemonicParsing="false" onAction="#cancelOpt" text="取消" />
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </AnchorPane>
+        <Separator minHeight="20.0" prefWidth="200.0" />
+        <ScrollPane fx:id="myscroll" fitToHeight="true" minHeight="100.0">
+            <content>
+                <VBox fx:id="output" />
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>

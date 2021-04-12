@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mine.learn.mtdl.gui.DoneController">
+   <children>
+      <ScrollPane prefHeight="60.0">
+         <content>
+            <Text fx:id="msg" fill="#009f40" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+         </content>
+      </ScrollPane>
+      <Separator prefWidth="200.0" />
+      <AnchorPane>
+         <children>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+              <buttons>
+                <Button fx:id="openfileloc" mnemonicParsing="false" text="打开文件所在位置" />
+                  <Button fx:id="openfile" mnemonicParsing="false" text="打开文件" />
+                  <Button mnemonicParsing="false" onAction="#dismiss" text="知道了" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
